@@ -25,7 +25,7 @@ SECRET_KEY = '*9h6+h6lrc5^sk%ld2wyx1t4a2^8w$4@(xluufk42m*c298o0$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1','notesstoragebtz.herokuapp.com']
+ALLOWED_HOSTS = ['notesstoragebtz.herokuapp.com']
 
 AUTH_USER_MODEL = 'accounts.User'
 AUTHENTICATION_BACKENDS=['django.contrib.auth.backends.ModelBackend']
