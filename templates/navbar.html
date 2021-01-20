@@ -1,0 +1,72 @@
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
+      
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link text-light" href="{{home}}">Home </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-light" href="{{add}}">Add</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link  text-light" href="{{logout}}">Logout</a>
+        </li>
+        
+       
+      </ul>
+      <form class="form-inline my-2 my-lg-0 w-25">
+        <input class="form-control mr-sm-2 w-100" type="search" placeholder="Search" aria-label="Search" id="search">
+       
+       
+      </form>
+    </div>
+  </nav>
+  
+  <script>
+    $(document).ready(function(){
+      $("#search").keyup(function(){
+         $.ajax({
+          dataType: 'json',
+          type: 'GET',
+          data:{
+            'info':$("#search").val()
+          },
+          beforeSend : function() {
+                          $(".post_submitting").show().html("<center><img src='images/loading.gif'/></center>");
+                    },
+          url: "{% url 'item:search_page' %}", 
+          success: function(result){  
+           
+           result=result.map((item)=>{
+             var  x={url:item.link,label:item.title}
+             return x
+           })
+           
+          if(result[0]!=null){
+          $( "#search" ).autocomplete({
+             source: result,
+             select: function( event, ui ) {
+            
+           window.location=ui.item.url
+   
+            }
+    });
+          }
+         
+        
+         },
+         error: function () {
+
+alert("some problem in saving data");
+}
+});
+});
+});
+  </script>

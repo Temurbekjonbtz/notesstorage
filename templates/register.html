@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+ 
+
+{% block content %}
+
+<!-- Material form register -->
+<div class="card w-50 m-25 mx-auto shadow-lg  mb-5 bg-white rounded" style="margin-top:5%;">
+
+    <h5 class="card-header info-color white-text text-center py-4 bg-info text-light">
+        <strong>Register</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+
+        <!-- Form -->
+        <form class="text-center" style="color: #757575; padding-top:5%;" method="POST">{% csrf_token %}
+
+           {{form}}
+
+
+           
+
+            <!-- Password -->
+            <div class="md-form">
+               
+                <small id="materialRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+                    At least 8 characters and 1 digit
+                </small>
+            </div>
+
+          
+          
+
+           
+
+            <!-- Sign up button -->
+            <div class="form-row">
+                <div class="col">
+                    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Register</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"><a  href="{{login}}">Log  In</a></button>
+                </div>
+            </div>
+          
+
+            
+
+           
+            
+
+        </form>
+        <!-- Form -->
+
+    </div>
+
+</div>
+<!-- Material form register -->
+
+{% endblock %}
+

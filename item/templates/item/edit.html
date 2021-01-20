@@ -1,0 +1,25 @@
+{%  extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="card  w-50  m-25 mx-auto align-middle t-25  shadow-lg  mb-5 bg-white rounded" style="margin-top:5%;">
+
+    <h5 class="card-header info-color white-text text-center py-4 bg-info color-light text-light">
+      <strong>Submit</strong>
+    </h5>
+  
+   
+    <div class="card-body px-lg-5 pt-0 " > 
+  
+      
+      <form class="text-center" style="color: #757575;padding-top:30px;"  method="POST" enctype="multipart/form-data" >
+        {% csrf_token %}
+       {{form}}
+        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Submit</button>
+  
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

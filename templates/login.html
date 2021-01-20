@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- Material form login -->
+<div class="card w-50 mx-auto shadow-lg  mb-5 bg-white rounded" style="margin-top:5%;">
+
+    <h5 class="card-header info-color white-text text-center py-4 bg-info text-light">
+      <strong>Login</strong>
+    </h5>
+  
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+  
+      <!-- Form -->
+      <form class="text-center" style="color: #757575; padding-top:5%;" method="POST"> {% csrf_token %}
+  
+        {{form}}
+       
+       
+  
+       
+  
+      <div class="form-row">
+          <div class="col">
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Login</button>
+          </div>
+          <div class="col">
+            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit"><a href="{{register}}">Register</a></button>
+          </div>
+      </div>
+       
+  
+        
+        
+  
+        
+       
+      </form>
+      
+  
+    </div>
+  
+  </div>
+  <!-- Material form login -->
+
+{% endblock %}
