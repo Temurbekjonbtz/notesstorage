@@ -23,7 +23,9 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = '*9h6+h6lrc5^sk%ld2wyx1t4a2^8w$4@(xluufk42m*c298o0$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
+
 
 ALLOWED_HOSTS = ['127.0.0.1','notesstoragebtz.herokuapp.com']
 
@@ -131,7 +133,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS=[os.path.join(BASE_DIR,"static_my_proj"),]
 
-STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static_cdn","static_root")
+STATIC_ROOT=os.path.join(os.path.dirname(BASE_DIR),"project1/static_cdn","static_root")
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),"static_cdn","media_root")
+MEDIA_ROOT=os.path.join(os.path.dirname(BASE_DIR),"project1/static_cdn","media_root")
